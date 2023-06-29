@@ -73,6 +73,7 @@ runs:
     - '${{ inputs.user-email }}'
     - '${{ inputs.user-name }}'
     - '${{ inputs.destination-repository-username }}'
+    - '${{ inputs.source-branch }}'
     - '${{ inputs.target-branch }}'
     - '${{ inputs.commit-message }}'
     - '${{ inputs.target-directory }}'
