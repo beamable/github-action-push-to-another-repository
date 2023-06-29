@@ -12,10 +12,11 @@ GITHUB_SERVER="${5}"
 USER_EMAIL="${6}"
 USER_NAME="${7}"
 DESTINATION_REPOSITORY_USERNAME="${8}"
-TARGET_BRANCH="${9}"
-COMMIT_MESSAGE="${10}"
-TARGET_DIRECTORY="${11}"
-CREATE_TARGET_BRANCH_IF_NEEDED="${12}"
+SOURCE_BRANCH="${9}"
+TARGET_BRANCH="${10}"
+COMMIT_MESSAGE="${11}"
+TARGET_DIRECTORY="${12}"
+CREATE_TARGET_BRANCH_IF_NEEDED="${13}"
 
 if [ -z "$DESTINATION_REPOSITORY_USERNAME" ]
 then
@@ -172,4 +173,4 @@ git diff-index --quiet HEAD || git commit --message "$COMMIT_MESSAGE"
 
 echo "[+] Pushing git commit"
 # --set-upstream: sets de branch when pushing to a branch that does not exist
-git push "$GIT_CMD_REPOSITORY" --set-upstream "$TARGET_BRANCH"
+git push "$GIT_CMD_REPOSITORY" "$SOURCE_BRANCH":"$TARGET_BRANCH"
