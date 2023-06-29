@@ -32,6 +32,12 @@ inputs:
     description: '[Optional] Username/organization for the destination repository'
     required: false
     default: ''
+  source-branch:
+    description: >-
+      [Optional] set source branch name for the source repository. Defaults
+      to "main"
+    default: main
+    required: false
   target-branch:
     description: >-
       [Optional] set target branch name for the destination repository. Defaults
